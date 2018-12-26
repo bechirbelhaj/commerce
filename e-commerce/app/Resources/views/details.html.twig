@@ -1,0 +1,31 @@
+{% extends 'base.html.twig'%}
+{% block body %}
+    {% include 'nav.html.twig' %}
+
+    <div style="margin-top: 60px;"> <div class="container"><div class="row">
+    <table class="table table-hover" width="70%">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Nom</th>
+            <th>Prix</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><img src="{{ produit.urlimage }}" width="30px;" heght="30px;" /></td>
+
+            <td>{{ produit.nom }}</td>
+
+             <td>{{ produit.prix }}</td>
+
+             <td>{{ produit.description }}</td>
+        </tr>
+        </tbody>
+    </table>
+            <a class="btn btn-default" href="{{ path("Shop") }}">Back</a>
+
+        </div></div></div>
+
+{% endblock %}

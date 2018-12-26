@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" href="../../favicon.ico">
+        <title>{% block title %}TuniShop{% endblock %}</title>
+        {% block stylesheets %}
+            {% stylesheets 'css/bootstrap.min.css' 'css/Font/css/font-awesome.min.css' filter='cssrewrite' %}
+                <link rel="stylesheet" href="{{ asset_url }}" />
+
+            {% endstylesheets %}
+         {% endblock %}
+
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+
+        {% block body %}
+
+        {% endblock %}
+        {% block javascripts %}
+            {% javascripts 'js/jquery.min.js''js/bootstrap.min.js' %}
+                <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+        {% endblock %}
+    </body>
+</html>

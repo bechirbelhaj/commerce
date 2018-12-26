@@ -1,0 +1,49 @@
+{% extends 'base.html.twig'%}
+{% block body %}
+    {% include 'nav.html.twig' %}
+
+     <div style="margin-top: 60px;">
+        <div class="container">
+            <div class="row">
+                {% for success_message in app.session.flashbag.get('message') %}
+                    <div class="alert alert-success">{{ success_message }}</div>
+                {% endfor%}
+                <table class="table table-hover" width="70%">
+                    <thead>
+                    <tr>
+                        <th>Produit</th>
+                        <th>Quantité Demandé</th>
+                        <th>Prix Total</th>
+                        <th>#</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                  {% for var in paniers %}
+                    <tr>
+
+                        <td>{{ var.produit.nom }}</td>
+
+                        <td>{{ var.qt }}</td>
+
+                        <td>{{ var.prixTotal }}</td>
+                        <td>
+<a class="btn btn-danger btn-xs" href="{{ path("supp_panier", {'id': var.id}) }}">Supprimer</a>
+<a class="btn btn-info btn-xs" href="{{ path("commander", {'id': var.id}) }}">Finaliser ma commande</a>
+
+</td>
+
+                    </tr>
+                  {% endfor %}
+                    </tbody>
+                </table>
+                <a class="btn btn-default" href="{{ path("Shop") }}">Back</a>
+
+            </div></div></div>
+
+
+
+
+
+
+{% endblock %}
+

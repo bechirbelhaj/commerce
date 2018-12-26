@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+  {% include 'nav.html.twig' %}
+<div style="margin-top: 60px;"><div class="container"><div class="row">
+<a class="btn btn-default href="{{ path("Shop") }}" style="margin-bottom: 40px;">Back</a>
+{{ form_start(form) }}
+{{ form_widget(form) }}
+{{ form_end(form) }}
+</div></div></div>
+{% endblock %}

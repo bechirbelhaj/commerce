@@ -1,0 +1,12 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+    <div class="alert alert-info"><p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p></div>
+    {% if targetUrl %}
+    <div class="alert alert-info"><p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p></div>
+    {% endif %}
+    <a href="{{ path("fos_user_security_login") }}" class="btn btn-success btn-lg btn-block">Connexion</a>
+
+{% endblock fos_user_content %}

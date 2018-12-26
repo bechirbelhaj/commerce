@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    {% include 'nav.html.twig' %}
+    <div style="margin-top: 60px;"> <div class="container"><div class="row">
+                <div style="background-color: #F0F0F0; padding: 20px;">
+                    Veuillez se connecter
+
+                </div>
+                <div style="margin-top: 20px;">
+                 <a class="btn btn-info" href="{{ path("fos_user_security_login") }}">Connexion</a>
+                 <a class="btn btn-primary" href="{{ path("fos_user_registration_register") }}">Inscription</a>
+                 <a class="btn btn-default" href="{{ path("Shop") }}">Back</a>
+                </div>
+            </div></div></div>
+    
+{% endblock %}

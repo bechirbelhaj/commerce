@@ -1,0 +1,41 @@
+{% extends 'base.html.twig'%}
+{% block body %}
+    {% include 'nav.html.twig' %}
+
+    <div style="margin-top: 60px;">
+        <div class="container">
+            <div class="row">
+            <table class="table table-hover" width="70%">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Prix total</th>
+                        <th>Date</th>
+                     
+                    </tr>
+                    </thead>
+                    <tbody>
+                     {% for var in commandes %}
+                    <tr>
+
+                        <td>{{ var.id }}</td>
+
+                        <td>{{ var.total }}</td>
+
+                        <td>{{ var.dateCommande|date('d/m/y') }}</td>
+                    </tr>
+                     {% endfor %}
+                    </tbody>
+                </table>
+
+
+                 <a class="btn btn-default" href="{{ path("Shop") }}">Back</a>
+                   </div></div></div>
+
+
+
+
+
+
+{% endblock %}
+

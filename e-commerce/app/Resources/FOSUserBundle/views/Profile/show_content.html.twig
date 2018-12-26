@@ -1,0 +1,24 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="fos_user_user_show">
+    <div class="container">
+        <div class="row">
+            <h1>Mes informations :</h1>
+            <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
+            <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+            <div style="display:inline;">
+                <a href="{{ path("fos_user_profile_edit") }}" class="btn btn-success">Editer mon profil</a>
+                <a href="{{ path("fos_user_change_password") }}" class="btn btn-info">changer mon mot de passe</a>
+                <a href="{{ path("fos_user_security_logout") }}" class="btn btn-info">Déconnexion</a>
+                <a href="{{ path("Shop") }}" class="btn btn-info">Retour</a>
+                <br><br> <br>
+                <a href="{{ path("list_panier") }}" class="btn btn-info">Voir mon panier</a>
+                <a href="{{ path("list_commande") }}" class="btn btn-info">Voir mes commandes </a>
+
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
